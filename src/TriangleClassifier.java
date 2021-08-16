@@ -10,7 +10,7 @@ public class TriangleClassifier {
         boolean sideAEqualC = sideA == sideC;
         boolean sideBEqualC = sideB == sideC;
         String result = "";
-        if ((sideA + sideB <= sideC) || (sideA + sideC <= sideB) || (sideB + sideC <= sideA)) {
+        if ((sideA + sideB <= sideC) || (sideA + sideC <= sideB) || (sideB + sideC <= sideA) || sideA <= 0 || sideB <= 0 || sideC <= 0) {
             result = NOTTRIANGLE;
         } else {
             result = getResultIsTriangle(sideA, sideB, sideC, sideAEqualB, sideAEqualC, sideBEqualC);

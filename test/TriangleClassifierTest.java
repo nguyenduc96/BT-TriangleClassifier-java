@@ -68,4 +68,37 @@ class TriangleClassifierTest {
         String result = TriangleClassifier.classifyTriangle(sideA, sideB, sideC);
         assertEquals(expected, result);
     }
+
+    @Test
+    public void testNotTriangleBecauseSideNegativeAtA() {
+        int sideA = 0;
+        int sideB = 2;
+        int sideC = 2;
+
+        String expected = TriangleClassifier.NOTTRIANGLE;
+        String result = TriangleClassifier.classifyTriangle(sideA, sideB, sideC);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testNotTriangleBecauseSideNegativeAtB() {
+        int sideA = 3;
+        int sideB = -1;
+        int sideC = 2;
+
+        String expected = TriangleClassifier.NOTTRIANGLE;
+        String result = TriangleClassifier.classifyTriangle(sideA, sideB, sideC);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testNotTriangleBecauseSideNegativeAtC() {
+        int sideA = 1;
+        int sideB = 2;
+        int sideC = -2;
+
+        String expected = TriangleClassifier.NOTTRIANGLE;
+        String result = TriangleClassifier.classifyTriangle(sideA, sideB, sideC);
+        assertEquals(expected, result);
+    }
 }
